@@ -163,15 +163,15 @@
     group: bare
     mode: '0755'
 
-- name: image_build # билд кастомного апача для дебага
-  community.docker.docker_image:
-     name: httpd_custom:1.0
-     tag: 1.0
-     state: present
-     source: build
-     build:
-      path: /home/project/project
-      dockerfile: Dockerfile1_httpd
+#- name: image_build # билд кастомного апача для дебага
+#  community.docker.docker_image:
+#     name: httpd_custom:1.0
+#     tag: 1.0
+#     state: present
+#     source: build
+#     build:
+#      path: /home/project/project
+#      dockerfile: Dockerfile1_httpd
 
 - name: compose_up
   shell: | 

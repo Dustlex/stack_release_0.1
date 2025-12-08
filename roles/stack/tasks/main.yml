@@ -1,4 +1,4 @@
-# доработанный кусок моего впн - https://github.com/Dustlex/xray_ansible_0.1
+# доработанный кусок моей старой сборки впн - https://github.com/Dustlex/xray_ansible_0.1
     - name: installation_block
       block:
         - name: apt_preparation 
@@ -41,10 +41,11 @@
           #  url: https://download.docker.com/linux/ubuntu/gpg
           # dest: /etc/apt/keyrings/docker.gpg
           #  mode: '0644'
+          #  Ниже работа через GPG, относительно новая вещь, gpg --dearmor берет скачанный текст и конвертирует его в gpg бинарь в нужную диру для таких бинарных ключей
           shell: |
             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
           args: 
-            creates: /etc/apt/keyrings/docker.gpg
+            creates: /etc/apt/keyrings/docker.gpg # пропустить таск если этот файл уже есть
           become: yes
 
 

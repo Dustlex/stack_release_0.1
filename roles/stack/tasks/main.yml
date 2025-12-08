@@ -1,3 +1,4 @@
+# доработанный кусок моего впн - https://github.com/Dustlex/xray_ansible_0.1
     - name: installation_block
       block:
         - name: apt_preparation 
@@ -25,7 +26,7 @@
         - debug:
            msg: "OLD UBUNTU - {{ ansible_facts.lsb.release }} - USING OLD FUCKING KEY METHOD"
 
-      when: ansible_facts.lsb.release is version('18.04', '<') # с 20.04 apt-key стал deprecated(
+      when: ansible_facts.lsb.release is version('18.04', '<=') # с 20.04 apt-key стал deprecated(
     
     - name: new_key_block_for_new_ubuntu
       block:
@@ -56,7 +57,7 @@
         - debug:
             msg: "NEWER UBUNTU - {{ ansible_facts.lsb.release }} - USING NEWER METHOD"
 
-      when: ansible_facts.lsb.release is version('18.04', '>=')
+      when: ansible_facts.lsb.release is version('18.04', '>')
     
     - name: docker installation
       apt: #после добавления ключа и репозитория, ставим все модули

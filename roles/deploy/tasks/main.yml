@@ -109,7 +109,7 @@
     group: project
     recurse: yes
 
-- name: fix ssh after fix
+- name: fix ssh dir
   file:
     path: /home/project/.ssh
     owner: project

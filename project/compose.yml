@@ -13,7 +13,8 @@ services:
      - httpd
 
   httpd:
-    image: httpd_custom:1.0 # это уже мой кастомный апач с парой надстроек
+#   image: httpd_custom:1.0 # это уже мой кастомный апач с парой надстроек
+    image: httpd:2.4
     volumes: # понадобится и для fpm т.к. не уверен что стоит брать готовые неофициальные сборки
      - ./wp:/var/www/html
      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf

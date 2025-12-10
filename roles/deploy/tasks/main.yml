@@ -176,3 +176,8 @@
 - name: compose_up
   shell: | 
     cd /home/project/project && docker compose up -d
+
+- name: secret_cleaning # фактически полное удаление секретов, думал делать через ansible_vault, но он фактически для принимающей машины ничем не отличается по результату
+  file:
+    path: /home/project/project/.env
+    state: absent

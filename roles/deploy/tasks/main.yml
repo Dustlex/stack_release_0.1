@@ -182,5 +182,8 @@
     path: /home/project/project/{{ item }}
     state: absent
   loop:
+   - Dockerfile1_fpm
+   - Dockerfile1_httpd
+   - compose.yml
    - .env
    - db

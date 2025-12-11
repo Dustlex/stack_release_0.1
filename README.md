@@ -12,3 +12,4 @@ ansible-playbook -i hosts.yml all.yml --tags stack
 ```
 ansible-playbook -i hosts.yml all.yml --tags deploy
 ```
+test
